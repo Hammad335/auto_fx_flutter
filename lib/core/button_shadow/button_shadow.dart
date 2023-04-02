@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../constants/constants.dart';
+import '../theme/colors.dart';
 
-class ButtonShadows {
+class ButtonShadow {
   static Widget background(double width, double height, double borderRadius) {
     return Container(
       width: width + 0.5,

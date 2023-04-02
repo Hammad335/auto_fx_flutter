@@ -1,10 +1,10 @@
 import 'package:auto_fx_flutter/core/enums/enums.dart';
-import 'package:auto_fx_flutter/features/controller/credentials_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:auto_fx_flutter/constants/constants.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
-import '../../core/widgets/widgets.dart';
+import '../../../core/theme/colors.dart';
+import '../../../core/widgets/widgets.dart';
+import '../controller/credentials_controller.dart';
 
 class CredentialsScreen extends StatelessWidget {
   static const String name = 'credentials-screen';
@@ -56,7 +56,7 @@ class CredentialsScreen extends StatelessWidget {
                                   AuthMode.Signin
                               ? 'Log In'
                               : 'Sign up',
-                          onPressed: () {},
+                          onPressed: () => _controller.authenticate(),
                         );
                       }),
                       Container(

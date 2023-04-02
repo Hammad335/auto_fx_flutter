@@ -1,7 +1,8 @@
-import 'package:auto_fx_flutter/features/bindings/credentials_bindings.dart';
-import 'package:auto_fx_flutter/features/view/credentials_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'features/credentials_screen/bindings/credentials_bindings.dart';
+import 'features/credentials_screen/view/credentials_screen.dart';
 
 void main() {
   runApp(const MyApp());

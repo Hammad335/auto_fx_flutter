@@ -1,9 +1,9 @@
-import 'package:auto_fx_flutter/core/button_shadows/button_shadows.dart';
+import 'package:auto_fx_flutter/core/button_shadow/button_shadow.dart';
 import 'package:auto_fx_flutter/core/enums/enums.dart';
-import 'package:auto_fx_flutter/features/controller/credentials_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../constants/constants.dart';
+import '../../features/credentials_screen/controller/credentials_controller.dart';
+import '../theme/colors.dart';
 
 class CredentialsTabView extends StatelessWidget {
   final CredentialsController controller;
@@ -41,7 +41,7 @@ class CredentialsTabView extends StatelessWidget {
           alignment: Alignment.bottomRight,
           children: [
             if (controller.selectedAuthMode.value == credentialTab)
-              ButtonShadows.background(
+              ButtonShadow.background(
                 controller.size.width * 0.33,
                 controller.size.height * 0.045,
                 10,

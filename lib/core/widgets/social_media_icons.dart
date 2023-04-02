@@ -1,5 +1,6 @@
-import 'package:auto_fx_flutter/constants/constants.dart';
 import 'package:flutter/material.dart';
+
+import '../theme/colors.dart';
 
 class SocialMediaIcons extends StatelessWidget {
   const SocialMediaIcons({Key? key}) : super(key: key);

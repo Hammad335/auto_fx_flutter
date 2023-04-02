@@ -7,3 +7,4 @@ const Color primary = Color(0xff096ED8);
 const Color buttonShadowColor = Color(0xff1193CD);
 const Color backgroundColor = Color(0xff2B2B2B);
 const Color textFieldFillColor = Color(0xff313131);
+const Color errorColor = Colors.red;
