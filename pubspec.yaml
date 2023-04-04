@@ -35,8 +35,18 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+
+  # GetX state management
   get: ^4.6.5
+
+  # Neumorphic widgets
   flutter_neumorphic: ^3.0.3
+
+  # Firebase user authentication
+  firebase_auth: ^4.4.0
+
+  # Firebase firestore cloud storage
+  cloud_firestore: ^4.5.0
 
 
 dev_dependencies:

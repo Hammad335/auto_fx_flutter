@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/enums/enums.dart';
+import '../../../core/models/models.dart';
 import '../../../core/repository/auth_repo.dart';
 
 class CredentialsController extends GetxController {
   late final AuthRepo _authRepo;
   late Size size;
+
+  late UserModel currentUser;
+  RxBool isLoading = false.obs;
 
   final formKey = GlobalKey<FormState>();
   late TextEditingController userNameController;
@@ -27,28 +31,49 @@ class CredentialsController extends GetxController {
     size = MediaQuery.of(context).size;
   }
 
-  bool get isSignInMode => selectedAuthMode.value == AuthMode.Signin;
-
-  void authenticate() {
+  void authenticate() async {
     if (!formKey.currentState!.validate()) return;
 
+    _showLoading();
     if (selectedAuthMode.value == AuthMode.Signup) {
-      _registerNewUser(
+      await _registerNewUser(
         userNameController.text,
         emailController.text,
         passwordController.text,
       );
     } else {
-      _loginUser(
+      await _loginUser(
         emailController.text,
         passwordController.text,
       );
     }
+    _hideLoading();
   }
 
-  void _registerNewUser(String userName, String email, String password) async {}
+  Future<void> _registerNewUser(
+      String userName, String email, String password) async {
+    try {
+      await _authRepo.registerUser(
+        userName,
+        email,
+        password,
+      );
+    } catch (exception) {
+      Get.snackbar('Error', exception.toString());
+    }
+  }
 
-  void _loginUser(String email, String password) async {}
+  Future<void> _loginUser(String email, String password) async {
+    try {
+      currentUser = await _authRepo.loginUser(
+        email,
+        password,
+      );
+      print(currentUser.toJson());
+    } catch (exception) {
+      Get.snackbar('Error', exception.toString());
+    }
+  }
 
   initAnimationController(AnimationController animController) {
     // animationController = animController;
@@ -66,6 +91,12 @@ class CredentialsController extends GetxController {
       // animationController.reverse();
     }
   }
+
+  bool get isSignInMode => selectedAuthMode.value == AuthMode.Signin;
+
+  void _showLoading() => isLoading.value = true;
+
+  void _hideLoading() => isLoading.value = false;
 
   @override
   void dispose() {
