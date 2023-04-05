@@ -75,6 +75,17 @@ class CredentialsController extends GetxController {
     }
   }
 
+  Future<void> signInWithSocialAccount(SocialAccount socialAccount) async {
+    if (socialAccount == SocialAccount.Google) {
+      try {
+        currentUser = await _authRepo.signInWithGoogle();
+        print(currentUser.toJson());
+      } catch (exception) {
+        Get.snackbar('Error', exception.toString());
+      }
+    }
+  }
+
   initAnimationController(AnimationController animController) {
     // animationController = animController;
   }
@@ -84,11 +95,11 @@ class CredentialsController extends GetxController {
         credentialTab == AuthMode.Signin ? AuthMode.Signin : AuthMode.Signup;
 
     if (credentialTab == AuthMode.Signup) {
-      selectedAuthMode.value = AuthMode.Signup;
-      // animationController.forward();
     } else {
       selectedAuthMode.value = AuthMode.Signin;
       // animationController.reverse();
+      selectedAuthMode.value = AuthMode.Signup;
+      // animationController.forward();
     }
   }
 

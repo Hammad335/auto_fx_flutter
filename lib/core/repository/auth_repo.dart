@@ -12,19 +12,11 @@ class AuthRepo {
   Future<void> registerUser(
       String userName, String email, String password) async {
     try {
-      // UserCredential userCredential =
-      await _authService.registerWithEmailAndPassword(
+      await _authService.signUpWithEmailAndPassword(
         userName,
         email,
         password,
       );
-      // User user = userCredential.user!;
-      // return UserModel(
-      //   uId: user.uid,
-      //   name: userName,
-      //   email: email,
-      //   isEmailVerified: user.emailVerified,
-      // );
     } catch (exception) {
       rethrow;
     }
@@ -33,7 +25,7 @@ class AuthRepo {
   Future<UserModel> loginUser(String email, String password) async {
     try {
       UserCredential userCredential =
-          await _authService.loginWithEmailAndPassword(
+          await _authService.signInWithEmailAndPassword(
         email,
         password,
       );
@@ -42,6 +34,21 @@ class AuthRepo {
         uId: user.uid,
         name: user.displayName ?? '',
         email: email,
+        isEmailVerified: user.emailVerified,
+      );
+    } catch (exception) {
+      rethrow;
+    }
+  }
+
+  Future<UserModel> signInWithGoogle() async {
+    try {
+      UserCredential userCredential = await _authService.signInWithGoogle();
+      User user = userCredential.user!;
+      return UserModel(
+        uId: user.uid,
+        name: user.displayName ?? '',
+        email: user.email ?? '',
         isEmailVerified: user.emailVerified,
       );
     } catch (exception) {

@@ -17,7 +17,6 @@ class CredentialsScreen extends StatelessWidget {
     _controller.init(context);
     return Scaffold(
       backgroundColor: backgroundColor,
-      // resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding:
@@ -69,7 +68,7 @@ class CredentialsScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SocialMediaIcons(),
+                      SocialMediaIcons(),
                       // const SizedBox(height: 100),
                     ],
                   ),
