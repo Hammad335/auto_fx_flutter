@@ -1,3 +1,4 @@
+import 'package:auto_fx_flutter/features/splash_screen/view/splash_screen.dart';
 import 'package:auto_fx_flutter/routes/navigate.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,12 +16,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      title: 'AutoFx',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
+      initialRoute: SplashScreen.name,
       getPages: Navigate.routes,
     );
   }

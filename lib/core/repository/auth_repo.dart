@@ -1,3 +1,5 @@
+import 'package:auto_fx_flutter/features/bottom_nav_screen/view/bottom_nav_screen.dart';
+import 'package:auto_fx_flutter/features/credentials_screen/view/credentials_screen.dart';
 import 'package:auto_fx_flutter/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../models/models.dart';
@@ -54,5 +56,11 @@ class AuthRepo {
     } catch (exception) {
       rethrow;
     }
+  }
+
+  String getInitialRoute() {
+    return _authService.isLoggedIn()
+        ? BottomNavScreen.name
+        : CredentialsScreen.name;
   }
 }

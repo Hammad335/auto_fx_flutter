@@ -62,21 +62,20 @@ class AuthService {
     }
   }
 
-  Future<void> signOutFromGoogle() async {
-    try {
-      await _googleSignIn.signOut();
-      await _auth.signOut();
-    } catch (e) {
-      rethrow;
-    }
-  }
-
   Future<void> logout() async {
     try {
+      await _signOutFromGoogle();
       await _auth.signOut();
       // currentUser.value = null;
     } catch (e) {
       rethrow;
     }
+  }
+
+  Future<void> _signOutFromGoogle() async =>
+      await _googleSignIn.isSignedIn() ? _googleSignIn.signOut() : null;
+
+  bool isLoggedIn() {
+    return _auth.currentUser != null;
   }
 }

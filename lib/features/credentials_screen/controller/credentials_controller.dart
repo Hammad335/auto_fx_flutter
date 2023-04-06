@@ -1,3 +1,4 @@
+import 'package:auto_fx_flutter/features/bottom_nav_screen/view/bottom_nav_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/enums/enums.dart';
@@ -29,6 +30,10 @@ class CredentialsController extends GetxController {
 
   init(BuildContext context) {
     size = MediaQuery.of(context).size;
+  }
+
+  String get getInitialRoute {
+    return _authRepo.getInitialRoute();
   }
 
   void authenticate() async {
@@ -69,7 +74,7 @@ class CredentialsController extends GetxController {
         email,
         password,
       );
-      print(currentUser.toJson());
+      _navigateToBottomNavScreen();
     } catch (exception) {
       Get.snackbar('Error', exception.toString());
     }
@@ -79,7 +84,6 @@ class CredentialsController extends GetxController {
     if (socialAccount == SocialAccount.Google) {
       try {
         currentUser = await _authRepo.signInWithGoogle();
-        print(currentUser.toJson());
       } catch (exception) {
         Get.snackbar('Error', exception.toString());
       }
@@ -108,6 +112,10 @@ class CredentialsController extends GetxController {
   void _showLoading() => isLoading.value = true;
 
   void _hideLoading() => isLoading.value = false;
+
+  void _navigateToBottomNavScreen() {
+    Get.offAndToNamed(BottomNavScreen.name);
+  }
 
   @override
   void dispose() {

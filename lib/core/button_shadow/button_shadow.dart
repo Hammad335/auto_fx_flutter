@@ -21,4 +21,15 @@ class ButtonShadow {
       ),
     );
   }
+
+  static List<BoxShadow> get navIconShadow {
+    return const [
+      BoxShadow(
+        color: Colors.black54,
+        blurRadius: 1,
+        spreadRadius: 1,
+        offset: Offset(0, 3),
+      ),
+    ];
+  }
 }

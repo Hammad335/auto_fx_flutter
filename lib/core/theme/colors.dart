@@ -8,3 +8,5 @@ const Color buttonShadowColor = Color(0xff1193CD);
 const Color backgroundColor = Color(0xff2B2B2B);
 const Color textFieldFillColor = Color(0xff313131);
 const Color errorColor = Colors.red;
+const Color navBarIconColorSelected = Color(0xff4992ff);
+const Color navBarIconColorUnSelected = Color(0xffc9e1ff);

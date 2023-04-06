@@ -7,7 +7,7 @@ import '../../../core/widgets/widgets.dart';
 import '../controller/credentials_controller.dart';
 
 class CredentialsScreen extends StatelessWidget {
-  static const String name = 'credentials-screen';
+  static const String name = '/credentials-screen';
   final CredentialsController _controller = Get.find<CredentialsController>();
 
   CredentialsScreen({Key? key}) : super(key: key);
