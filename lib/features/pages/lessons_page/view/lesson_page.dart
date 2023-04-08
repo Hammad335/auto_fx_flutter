@@ -35,7 +35,9 @@ class LessonsPage extends StatelessWidget {
           ),
           Expanded(
             child: FutureBuilder(
-              future: _controller.get(),
+              future: _controller.getAllLessonCategories.isEmpty
+                  ? _controller.get()
+                  : null,
               builder: (BuildContext context,
                   AsyncSnapshot<List<LessonCategory>?> snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
@@ -44,23 +46,22 @@ class LessonsPage extends StatelessWidget {
                 if (snapshot.connectionState == ConnectionState.done) {
                   if (snapshot.hasError) {
                     print('error');
-                    print(snapshot.error.toString());
+                    return const SizedBox.shrink();
                   } else if (!snapshot.hasData) {
                     print('no data');
-                  } else {
-                    return ListView.builder(
-                      itemCount: _controller.getAllLessonCategories.length,
-                      physics: const BouncingScrollPhysics(),
-                      itemBuilder: (context, index) {
-                        return LessonWidget(
-                          controller: _controller,
-                          index: index,
-                        );
-                      },
-                    );
+                    return const SizedBox.shrink();
                   }
                 }
-                return const SizedBox.shrink();
+                return ListView.builder(
+                  itemCount: _controller.getAllLessonCategories.length,
+                  physics: const BouncingScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return LessonWidget(
+                      controller: _controller,
+                      index: index,
+                    );
+                  },
+                );
               },
             ),
           ),

@@ -6,5 +6,5 @@ export 'text_fields/text_fields.dart';
 export 'custom_paint_divider.dart';
 export 'bottom_nav_bar.dart';
 export 'page_header.dart';
-export 'lesson_widget.dart';
-export 'topics_list_view.dart';
+export 'lessons_page/lesson_widget.dart';
+export 'lessons_page/topics_list_view.dart';

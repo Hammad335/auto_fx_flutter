@@ -10,7 +10,8 @@ class LessonsController extends GetxController {
 
   List<LessonCategory>? lessonCategories;
 
-  // for changing category icon: open/close
+  // for changing category icon: open/close,
+  // and showing gradient onTapping category
   late RxList<bool> categoriesIndex;
 
   LessonsController() {
@@ -20,14 +21,16 @@ class LessonsController extends GetxController {
 
   Size get getSize => _navController.getSize;
 
-  List<LessonCategory> get getAllLessonCategories => [...lessonCategories!];
+  List<LessonCategory> get getAllLessonCategories => [...?lessonCategories];
 
   Future<List<LessonCategory>?> get() async {
     if (lessonCategories != null && lessonCategories!.isNotEmpty) {
       return lessonCategories;
     }
     lessonCategories = await _lessonsRepo.getLessons();
-    categoriesIndex = List.filled(lessonCategories!.length, false).obs;
+    categoriesIndex = List
+        .filled(lessonCategories!.length, false)
+        .obs;
     return getAllLessonCategories;
   }
 
