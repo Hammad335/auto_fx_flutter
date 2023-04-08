@@ -1,9 +1,9 @@
-import 'package:auto_fx_flutter/core/button_shadow/button_shadow.dart';
 import 'package:auto_fx_flutter/core/enums/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../features/credentials_screen/controller/credentials_controller.dart';
 import '../../features/pages/home_page/controller/home_controller.dart';
+import '../styles/styles.dart';
 import '../theme/colors.dart';
 
 class CustomTabView extends StatelessWidget {

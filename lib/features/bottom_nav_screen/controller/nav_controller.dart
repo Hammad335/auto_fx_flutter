@@ -1,4 +1,4 @@
-import 'package:auto_fx_flutter/features/pages/lessons_page/controller/lesosns_controller.dart';
+import 'package:auto_fx_flutter/features/pages/lessons_page/controller/lessons_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../../../core/enums/enums.dart';

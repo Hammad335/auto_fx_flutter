@@ -20,33 +20,35 @@ class BottomNavScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: backgroundColor,
       bottomNavigationBar: BottomNavBar(controller: _controller),
-      body: Obx(() {
-        // initializing corresponding getxControllers
-        _controller.initControllers();
+      body: SafeArea(
+        child: Obx(() {
+          // initializing corresponding getxControllers
+          _controller.initControllers();
 
-        switch (_controller.selectedNavBarIcon.value) {
-          case NavBarIcon.Home:
-            {
-              return HomePage();
-            }
-          case NavBarIcon.Trade:
-            {
-              return HomePage();
-            }
-          case NavBarIcon.Lessons:
-            {
-              return LessonsPage();
-            }
-          case NavBarIcon.User:
-            {
-              return ProfilePage();
-            }
-          default:
-            {
-              return HomePage();
-            }
-        }
-      }),
+          switch (_controller.selectedNavBarIcon.value) {
+            case NavBarIcon.Home:
+              {
+                return HomePage();
+              }
+            case NavBarIcon.Trade:
+              {
+                return HomePage();
+              }
+            case NavBarIcon.Lessons:
+              {
+                return LessonsPage();
+              }
+            case NavBarIcon.User:
+              {
+                return ProfilePage();
+              }
+            default:
+              {
+                return HomePage();
+              }
+          }
+        }),
+      ),
     );
   }
 }

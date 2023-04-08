@@ -16,16 +16,12 @@ class HomePage extends StatelessWidget {
       color: backgroundColor,
       width: double.infinity,
       height: double.infinity,
-      margin: EdgeInsets.only(top: _controller.getSize.height * 0.08),
+      margin: EdgeInsets.only(top: _controller.getSize.height * 0.06),
       padding: const EdgeInsets.all(0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            'assets/images/logos/logo.png',
-            width: _controller.getSize.width * 0.60,
-            height: _controller.getSize.width * 0.18,
-          ),
+          PageHeader(size: _controller.getSize),
           SizedBox(height: _controller.getSize.height * 0.08),
           CustomTabView(
             firstLabel: 'Official Bots',

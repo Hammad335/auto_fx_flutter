@@ -9,4 +9,15 @@ class TextStyles {
   static const TextStyle hintTextStyle = TextStyle(
     color: greyLight,
   );
+
+  static const TextStyle lessonCategoryTextStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 17,
+  );
+  static const TextStyle lessonPageHeadingStyle = TextStyle(
+    color: Colors.white,
+    fontSize: 19,
+    fontWeight: FontWeight.bold,
+    letterSpacing: 1,
+  );
 }

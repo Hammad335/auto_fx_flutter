@@ -2,8 +2,8 @@ import 'package:auto_fx_flutter/constants/constants.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/controller/nav_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../button_shadow/button_shadow.dart';
 import '../enums/enums.dart';
+import '../styles/styles.dart';
 import '../theme/colors.dart';
 import 'widgets.dart';
 

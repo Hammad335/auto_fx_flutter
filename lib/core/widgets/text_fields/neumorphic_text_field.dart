@@ -1,5 +1,6 @@
 import 'package:auto_fx_flutter/core/theme/text_styles.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import '../../styles/styles.dart';
 import '../../theme/colors.dart';
 
 class NeumorphicTextField extends StatelessWidget {
@@ -26,16 +27,10 @@ class NeumorphicTextField extends StatelessWidget {
             width: double.infinity,
             height: 55,
             child: Neumorphic(
-              style: NeumorphicStyle(
-                color: textFieldFillColor,
-                depth: -3,
+              style: CustomNeumorphic.style(
+                fillColor: textFieldFillColor,
                 intensity: 0.75,
-                lightSource: LightSource.bottomRight,
-                shadowLightColorEmboss: Colors.black,
-                border: const NeumorphicBorder.none(),
-                boxShape: NeumorphicBoxShape.roundRect(
-                  BorderRadius.circular(10),
-                ),
+                borderRadius: 10,
               ),
             ),
           ),

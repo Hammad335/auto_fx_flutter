@@ -1,6 +1,6 @@
-import 'package:auto_fx_flutter/core/button_shadow/button_shadow.dart';
 import 'package:flutter/material.dart';
 import '../../features/credentials_screen/controller/credentials_controller.dart';
+import '../styles/styles.dart';
 import '../theme/colors.dart';
 
 class CustomButton extends StatelessWidget {
