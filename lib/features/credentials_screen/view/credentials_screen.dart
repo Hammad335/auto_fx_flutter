@@ -30,7 +30,13 @@ class CredentialsScreen extends StatelessWidget {
                 height: 100,
               ),
               const SizedBox(height: 50),
-              CredentialsTabView(controller: _controller),
+              CustomTabView(
+                credentialsController: _controller,
+                firstLabel: 'Sign in',
+                secondLabel: 'Sign up',
+                width: _controller.size.width * 0.33,
+                height: _controller.size.height * 0.045,
+              ),
               const SizedBox(height: 20),
               Expanded(
                 child: SingleChildScrollView(

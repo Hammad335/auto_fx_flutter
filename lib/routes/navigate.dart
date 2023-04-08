@@ -1,8 +1,6 @@
 import 'package:auto_fx_flutter/features/bottom_nav_screen/bindings/nav_binding.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/view/bottom_nav_screen.dart';
-import 'package:auto_fx_flutter/features/home_screen/bindings/home_bindings.dart';
-import 'package:auto_fx_flutter/features/home_screen/view/home_screen.dart';
-import 'package:auto_fx_flutter/features/splash_screen/bindings/nav_binding.dart';
+import 'package:auto_fx_flutter/features/splash_screen/bindings/splash_binding.dart';
 import 'package:auto_fx_flutter/features/splash_screen/view/splash_screen.dart';
 import 'package:get/get.dart';
 import '../features/credentials_screen/bindings/credentials_bindings.dart';
@@ -24,11 +22,6 @@ class Navigate {
       name: BottomNavScreen.name,
       page: () => BottomNavScreen(),
       binding: NavBinding(),
-    ),
-    GetPage(
-      name: HomeScreen.name,
-      page: () => HomeScreen(),
-      binding: HomeBindings(),
     ),
   ];
 }

@@ -19,8 +19,6 @@ class CredentialsController extends GetxController {
 
   Rx<AuthMode> selectedAuthMode = AuthMode.Signin.obs;
 
-  // late AnimationController animationController;
-
   CredentialsController() {
     _authRepo = AuthRepo();
     userNameController = TextEditingController();
@@ -32,9 +30,7 @@ class CredentialsController extends GetxController {
     size = MediaQuery.of(context).size;
   }
 
-  String get getInitialRoute {
-    return _authRepo.getInitialRoute();
-  }
+  AuthMode get getSelectedTab => selectedAuthMode.value;
 
   void authenticate() async {
     if (!formKey.currentState!.validate()) return;
@@ -84,27 +80,15 @@ class CredentialsController extends GetxController {
     if (socialAccount == SocialAccount.Google) {
       try {
         currentUser = await _authRepo.signInWithGoogle();
+        _navigateToBottomNavScreen();
       } catch (exception) {
         Get.snackbar('Error', exception.toString());
       }
     }
   }
 
-  initAnimationController(AnimationController animController) {
-    // animationController = animController;
-  }
-
   void toggleTabView(AuthMode credentialTab) {
-    selectedAuthMode.value =
-        credentialTab == AuthMode.Signin ? AuthMode.Signin : AuthMode.Signup;
-
-    if (credentialTab == AuthMode.Signup) {
-    } else {
-      selectedAuthMode.value = AuthMode.Signin;
-      // animationController.reverse();
-      selectedAuthMode.value = AuthMode.Signup;
-      // animationController.forward();
-    }
+    selectedAuthMode.value = credentialTab;
   }
 
   bool get isSignInMode => selectedAuthMode.value == AuthMode.Signin;
@@ -119,7 +103,9 @@ class CredentialsController extends GetxController {
 
   @override
   void dispose() {
-    // animationController.dispose();
+    userNameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
     super.dispose();
   }
 }
