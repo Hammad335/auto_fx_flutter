@@ -2,10 +2,11 @@ import 'package:auto_fx_flutter/core/enums/enums.dart';
 import 'package:auto_fx_flutter/core/theme/colors.dart';
 import 'package:auto_fx_flutter/core/widgets/bottom_nav_bar.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/controller/nav_controller.dart';
-import 'package:auto_fx_flutter/features/home_screen/view/home_screen.dart';
-import 'package:auto_fx_flutter/features/profile_screen/view/profile_screen.dart';
+import 'package:auto_fx_flutter/features/pages/lessons_page/view/lesson_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../pages/home_page/view/home_page.dart';
+import '../../pages/profile_page/view/profile_page.dart';
 
 class BottomNavScreen extends StatelessWidget {
   static const String name = '/bottom-nav-screen';
@@ -26,23 +27,23 @@ class BottomNavScreen extends StatelessWidget {
         switch (_controller.selectedNavBarIcon.value) {
           case NavBarIcon.Home:
             {
-              return HomeScreen();
-            }
-          case NavBarIcon.Bot:
-            {
-              return HomeScreen();
+              return HomePage();
             }
           case NavBarIcon.Trade:
             {
-              return HomeScreen();
+              return HomePage();
+            }
+          case NavBarIcon.Lessons:
+            {
+              return LessonsPage();
             }
           case NavBarIcon.User:
             {
-              return ProfileScreen();
+              return ProfilePage();
             }
           default:
             {
-              return HomeScreen();
+              return HomePage();
             }
         }
       }),

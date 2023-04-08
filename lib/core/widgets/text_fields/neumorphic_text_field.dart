@@ -1,6 +1,6 @@
 import 'package:auto_fx_flutter/core/theme/text_styles.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import '../theme/colors.dart';
+import '../../theme/colors.dart';
 
 class NeumorphicTextField extends StatelessWidget {
   final String hint;

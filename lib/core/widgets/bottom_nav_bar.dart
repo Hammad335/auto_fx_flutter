@@ -1,3 +1,4 @@
+import 'package:auto_fx_flutter/constants/constants.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/controller/nav_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -33,22 +34,22 @@ class BottomNavBar extends StatelessWidget {
             children: [
               NavBarIconButton(
                 controller: controller,
-                iconData: Icons.home,
+                imagePath: navBarImages[0],
                 navIcon: NavBarIcon.Home,
               ),
               NavBarIconButton(
                 controller: controller,
-                iconData: Icons.perm_data_setting_outlined,
+                imagePath: navBarImages[1],
                 navIcon: NavBarIcon.Trade,
               ),
               NavBarIconButton(
                 controller: controller,
-                iconData: Icons.hourglass_bottom,
-                navIcon: NavBarIcon.Bot,
+                imagePath: navBarImages[2],
+                navIcon: NavBarIcon.Lessons,
               ),
               NavBarIconButton(
                 controller: controller,
-                iconData: Icons.person,
+                imagePath: navBarImages[3],
                 navIcon: NavBarIcon.User,
               ),
             ],
@@ -66,13 +67,13 @@ class BottomNavBar extends StatelessWidget {
 
 class NavBarIconButton extends StatelessWidget {
   final NavController controller;
-  final IconData iconData;
+  final String imagePath;
   final NavBarIcon navIcon;
 
   const NavBarIconButton({
     super.key,
     required this.controller,
-    required this.iconData,
+    required this.imagePath,
     required this.navIcon,
   });
 
@@ -84,8 +85,8 @@ class NavBarIconButton extends StatelessWidget {
       },
       child: Obx(
         () => Container(
-          width: 35,
-          height: 35,
+          width: 38,
+          height: 38,
           decoration: controller.selectedNavBarIcon.value == navIcon
               ? BoxDecoration(
                   color: navIconBackgroundColor,
@@ -98,8 +99,8 @@ class NavBarIconButton extends StatelessWidget {
             color: Colors.transparent,
             shadowColor: Colors.transparent,
             borderRadius: BorderRadius.circular(8),
-            child: Icon(
-              iconData,
+            child: ImageIcon(
+              AssetImage(imagePath),
               size: 25,
               color: controller.selectedNavBarIcon.value == navIcon
                   ? navBarIconColorSelected

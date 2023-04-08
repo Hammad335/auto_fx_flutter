@@ -1,14 +1,14 @@
 import 'package:auto_fx_flutter/core/theme/colors.dart';
-import 'package:auto_fx_flutter/features/home_screen/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/widgets/widgets.dart';
+import '../../../../core/widgets/widgets.dart';
+import '../controller/home_controller.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomePage extends StatelessWidget {
   static const String name = '/home-screen';
   final HomeController _controller = Get.find<HomeController>();
 
-  HomeScreen({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
