@@ -8,7 +8,7 @@ class LessonsController extends GetxController {
   late LessonsRepo _lessonsRepo;
   late final NavController _navController;
 
-  List<LessonCategory>? _lessonCategories;
+  List<LessonCategory> _lessonCategories = <LessonCategory>[];
 
   // for changing category icon: open/close,
   // and showing gradient onTapping category
@@ -19,19 +19,20 @@ class LessonsController extends GetxController {
     _lessonsRepo = LessonsRepo();
   }
 
-  Size get getSize => _navController.getSize;
-
-  List<LessonCategory> get getAllLessonCategories => [...?_lessonCategories];
+  List<LessonCategory> get getAllLessonCategories => [..._lessonCategories];
 
   Future<List<LessonCategory>?> get() async {
-    if (_lessonCategories != null && _lessonCategories!.isNotEmpty) {
-      return _lessonCategories;
+    try {
+      _lessonCategories = await _lessonsRepo.getLessons();
+      categoriesIndex = List.filled(_lessonCategories.length, false).obs;
+      return getAllLessonCategories;
+    } catch (exception) {
+      return null;
     }
-    _lessonCategories = await _lessonsRepo.getLessons();
-    categoriesIndex = List.filled(_lessonCategories!.length, false).obs;
-    return getAllLessonCategories;
   }
 
   toggleSelectedCategoryIcon(int index) =>
       categoriesIndex[index] = !categoriesIndex[index];
+
+  Size get getSize => _navController.getSize;
 }

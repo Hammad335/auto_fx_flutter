@@ -13,6 +13,7 @@ class LessonsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageContainer(
+      marginHorizontal: 30,
       child: Column(
         children: [
           const SizedBox(
@@ -33,7 +34,7 @@ class LessonsPage extends StatelessWidget {
                   return const Center(child: CircularProgressIndicator());
                 }
                 if (snapshot.connectionState == ConnectionState.done) {
-                  if (snapshot.hasError) {
+                  if (snapshot.data == null && snapshot.hasError) {
                     print('error');
                     return const SizedBox.shrink();
                   } else if (!snapshot.hasData) {

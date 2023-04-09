@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../features/credentials_screen/controller/credentials_controller.dart';
-import '../../widgets.dart';
+import '../widgets.dart';
 
 class TextFields extends StatefulWidget {
   final CredentialsController controller;

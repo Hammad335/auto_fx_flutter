@@ -1,8 +1,7 @@
 import 'package:auto_fx_flutter/core/theme/text_styles.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-
-import '../../../styles/styles.dart';
-import '../../../theme/colors.dart';
+import '../../styles/styles.dart';
+import '../../theme/colors.dart';
 
 class NeumorphicTextField extends StatelessWidget {
   final String hint;
@@ -30,6 +29,7 @@ class NeumorphicTextField extends StatelessWidget {
             child: Neumorphic(
               style: CustomNeumorphic.style(
                 fillColor: textFieldFillColor,
+                depth: -3,
                 intensity: 0.75,
                 borderRadius: 10,
               ),

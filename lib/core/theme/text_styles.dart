@@ -9,6 +9,9 @@ class TextStyles {
   static const TextStyle hintTextStyle = TextStyle(
     color: greyLight,
   );
+  static const TextStyle botWidgetTextStyle = TextStyle(
+    color: white,
+  );
 
   static const TextStyle lessonCategoryTextStyle = TextStyle(
     color: Colors.white,

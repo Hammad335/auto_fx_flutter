@@ -23,6 +23,7 @@ class LessonWidget extends StatelessWidget {
       style: CustomNeumorphic.style(
         fillColor: backgroundColor,
         intensity: 0.80,
+        depth: -3,
         borderRadius: 6,
       ),
       child: Obx(
