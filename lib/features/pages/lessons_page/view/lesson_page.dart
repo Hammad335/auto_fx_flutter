@@ -4,7 +4,6 @@ import '../../../../core/widgets/widgets.dart';
 import 'package:auto_fx_flutter/features/pages/lessons_page/controller/lessons_controller.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
-import '../../../../core/theme/colors.dart';
 
 class LessonsPage extends StatelessWidget {
   final LessonsController _controller = Get.find<LessonsController>();
@@ -13,19 +12,9 @@ class LessonsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: backgroundColor,
-      width: double.infinity,
-      height: double.infinity,
-      margin: EdgeInsets.only(
-        top: _controller.getSize.height * 0.06,
-        left: 40,
-        right: 40,
-      ),
+    return PageContainer(
       child: Column(
         children: [
-          PageHeader(size: _controller.getSize),
-          SizedBox(height: _controller.getSize.height * 0.08),
           const SizedBox(
             height: 50,
             child: Text(
