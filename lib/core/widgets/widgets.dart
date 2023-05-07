@@ -10,3 +10,5 @@ export 'pages/lessons_page/lesson_widget.dart';
 export 'pages/lessons_page/topics_list_view.dart';
 export 'pages/page_container.dart';
 export 'pages/home_page/bot_widget.dart';
+export 'feature_widget.dart';
+export 'border_gradient_container.dart';

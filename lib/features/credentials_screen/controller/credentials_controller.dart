@@ -97,9 +97,7 @@ class CredentialsController extends GetxController {
 
   void _hideLoading() => isLoading.value = false;
 
-  void _navigateToBottomNavScreen() {
-    Get.offAndToNamed(BottomNavScreen.name);
-  }
+  void _navigateToBottomNavScreen() => Get.offAndToNamed(BottomNavScreen.name);
 
   @override
   void dispose() {

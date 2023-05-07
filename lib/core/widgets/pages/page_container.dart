@@ -7,9 +7,9 @@ import '../widgets.dart';
 class PageContainer extends StatelessWidget {
   final NavController _controller = Get.find<NavController>();
   final Widget child;
-  final double marginHorizontal;
+  final double paddingHorizontal;
 
-  PageContainer({super.key, required this.child, this.marginHorizontal = 0});
+  PageContainer({super.key, required this.child, this.paddingHorizontal = 0});
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +17,15 @@ class PageContainer extends StatelessWidget {
       color: backgroundColor,
       width: double.infinity,
       height: double.infinity,
-      margin: EdgeInsets.only(
+      padding: EdgeInsets.only(
         top: _controller.getSize.height * 0.04,
-        left: marginHorizontal,
-        right: marginHorizontal,
+        left: paddingHorizontal,
+        right: paddingHorizontal,
       ),
       child: Column(
         children: [
           PageHeader(size: _controller.getSize),
-          SizedBox(height: _controller.getSize.height * 0.07),
+          SizedBox(height: _controller.getSize.height * 0.03),
           Expanded(child: child),
         ],
       ),

@@ -1,8 +1,8 @@
+import 'package:auto_fx_flutter/core/models/models.dart';
 import 'package:auto_fx_flutter/core/repository/lessons_repo/lessons_repo.dart';
+import 'package:auto_fx_flutter/features/bottom_nav_screen/controller/nav_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../core/models/models.dart';
-import '../../../bottom_nav_screen/controller/nav_controller.dart';
 
 class LessonsController extends GetxController {
   late LessonsRepo _lessonsRepo;

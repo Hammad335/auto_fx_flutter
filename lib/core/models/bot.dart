@@ -1,35 +1,29 @@
+import 'package:auto_fx_flutter/core/models/models.dart';
+
 class Bot {
   final String name;
   final String description;
-  final double accuracy;
-  final bool isBackwardTesting;
-  final bool isForwardTesting;
+  BotFeatures features;
 
-  const Bot({
+  Bot({
     required this.name,
     required this.description,
-    required this.accuracy,
-    required this.isBackwardTesting,
-    required this.isForwardTesting,
+    required this.features,
   });
 
   Map<String, dynamic> toJson() {
     return {
       'name': name,
       'description': description,
-      'accuracy': accuracy,
-      'isBackwardTesting': isBackwardTesting,
-      'isForwardTesting': isForwardTesting,
+      'features': features,
     };
   }
 
-  factory Bot.fromJson(Map<String, dynamic> json) {
+  factory Bot.fromMap(Map<String, dynamic> json) {
     return Bot(
       name: json['name'] as String,
       description: json['description'] as String,
-      accuracy: json['accuracy'] as double,
-      isBackwardTesting: json['isBackwardTesting'] as bool,
-      isForwardTesting: json['isForwardTesting'] as bool,
+      features: json['features'] as BotFeatures,
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:auto_fx_flutter/core/theme/colors.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class CustomNeumorphic {
@@ -6,6 +7,7 @@ class CustomNeumorphic {
     required double intensity,
     required double depth,
     required double borderRadius,
+    bool addBorder = false,
   }) {
     return NeumorphicStyle(
       color: fillColor,
@@ -15,7 +17,9 @@ class CustomNeumorphic {
       shadowLightColorEmboss: Colors.black,
       shadowLightColor: Colors.black,
       shadowDarkColor: Colors.transparent,
-      border: const NeumorphicBorder.none(),
+      border: addBorder
+          ? NeumorphicBorder(color: botCheckBoxBorderColor, width: 0.5)
+          : const NeumorphicBorder.none(),
       boxShape:
           NeumorphicBoxShape.roundRect(BorderRadius.circular(borderRadius)),
       // oppositeShadowLightSource: true,

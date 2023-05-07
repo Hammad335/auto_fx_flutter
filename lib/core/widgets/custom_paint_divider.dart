@@ -2,12 +2,12 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 
 class CustomPaintDivider extends StatelessWidget {
-  final Size size;
+  final double width;
   final Color dividerColor;
 
   const CustomPaintDivider({
     super.key,
-    required this.size,
+    required this.width,
     required this.dividerColor,
   });
 
@@ -15,8 +15,8 @@ class CustomPaintDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomPaint(
       size: Size(
-        size.width * 0.75,
-        ((size.width * 0.55) * 0.003472222222222222).toDouble(),
+        width,
+        ((width * 0.55) * 0.003472222222222222).toDouble(),
       ),
       painter: Divider(dividerColor),
     );
@@ -32,7 +32,7 @@ class Divider extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     Paint paintStroke = Paint()
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.2;
+      ..strokeWidth = 1;
     paintStroke.shader = ui.Gradient.linear(
         Offset(size.width * 0.9415799, size.height * 5.997860),
         Offset(size.width * 0.07216389, size.height * 7.955240), [

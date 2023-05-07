@@ -1,36 +1,36 @@
-import 'package:flutter/material.dart';
+import 'package:auto_fx_flutter/core/models/lesson_category.dart';
+import 'package:auto_fx_flutter/core/theme/text_styles.dart';
+import 'package:auto_fx_flutter/core/widgets/widgets.dart';
+import 'package:auto_fx_flutter/features/bottom_nav_screen/pages/lessons_page/controller/lessons_controller.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
-import '../../../../core/models/models.dart';
-import '../../../../core/widgets/widgets.dart';
-import '../controller/home_controller.dart';
 
-class HomePage extends StatelessWidget {
-  static const String name = '/home-screen';
-  final HomeController _controller = Get.find<HomeController>();
+class LessonsPage extends StatelessWidget {
+  final LessonsController _controller = Get.find<LessonsController>();
 
-  HomePage({Key? key}) : super(key: key);
+  LessonsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return PageContainer(
+      paddingHorizontal: 30,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CustomTabView(
-            firstLabel: 'Official Bots',
-            secondLabel: 'Your Bots',
-            width: _controller.getSize.width * 0.35,
-            height: _controller.getSize.height * 0.045,
-            homeController: _controller,
+          SizedBox(height: _controller.getSize.height * 0.04),
+          const SizedBox(
+            height: 50,
+            child: Text(
+              'Lesson Categories',
+              style: TextStyles.lessonPageHeadingStyle,
+            ),
           ),
-          SizedBox(height: _controller.getSize.height * 0.05),
           Expanded(
             child: FutureBuilder(
-              future: _controller.getOfficialBots.isEmpty
+              future: _controller.getAllLessonCategories.isEmpty
                   ? _controller.get()
                   : null,
-              builder:
-                  (BuildContext context, AsyncSnapshot<List<Bot>?> snapshot) {
+              builder: (BuildContext context,
+                  AsyncSnapshot<List<LessonCategory>?> snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(child: CircularProgressIndicator());
                 }
@@ -44,10 +44,10 @@ class HomePage extends StatelessWidget {
                   }
                 }
                 return ListView.builder(
-                  itemCount: _controller.getOfficialBots.length,
+                  itemCount: _controller.getAllLessonCategories.length,
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
-                    return BotWidget(
+                    return LessonWidget(
                       controller: _controller,
                       index: index,
                     );

@@ -1,3 +1,5 @@
+import 'package:auto_fx_flutter/features/bot_details_screen/bindings/bot_details_binding.dart';
+import 'package:auto_fx_flutter/features/bot_details_screen/view/bot_details_screen.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/bindings/nav_binding.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/view/bottom_nav_screen.dart';
 import 'package:auto_fx_flutter/features/splash_screen/bindings/splash_binding.dart';
@@ -22,6 +24,11 @@ class Navigate {
       name: BottomNavScreen.name,
       page: () => BottomNavScreen(),
       binding: NavBinding(),
+    ),
+    GetPage(
+      name: BotDetailsScreen.name,
+      page: () => BotDetailsScreen(),
+      binding: BotDetailsBinding(),
     ),
   ];
 }

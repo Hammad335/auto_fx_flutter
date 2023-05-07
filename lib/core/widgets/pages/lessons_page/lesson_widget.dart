@@ -1,6 +1,6 @@
+import 'package:auto_fx_flutter/features/bottom_nav_screen/pages/lessons_page/controller/lessons_controller.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
-import '../../../../features/pages/lessons_page/controller/lessons_controller.dart';
 import '../../../styles/styles.dart';
 import '../../../theme/colors.dart';
 import '../../../theme/text_styles.dart';

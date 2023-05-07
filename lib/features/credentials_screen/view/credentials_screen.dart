@@ -56,11 +56,13 @@ class CredentialsScreen extends StatelessWidget {
                       const SizedBox(height: 40),
                       Obx(() {
                         return CustomButton(
-                          controller: _controller,
+                          width: _controller.size.width * 0.75,
+                          height: _controller.size.height * 0.052,
                           label: _controller.selectedAuthMode.value ==
                                   AuthMode.Signin
                               ? 'Log In'
                               : 'Sign up',
+                          elevation: 15,
                           onPressed: () => _controller.authenticate(),
                         );
                       }),

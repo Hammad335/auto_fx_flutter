@@ -25,7 +25,7 @@ class BottomNavBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CustomPaintDivider(
-            size: controller.getSize,
+            width: controller.getSize.width * 0.75,
             dividerColor: secondary,
           ),
           const SizedBox(height: 15),
@@ -56,7 +56,7 @@ class BottomNavBar extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           CustomPaintDivider(
-            size: controller.getSize,
+            width: controller.getSize.width * 0.75,
             dividerColor: primary,
           ),
         ],

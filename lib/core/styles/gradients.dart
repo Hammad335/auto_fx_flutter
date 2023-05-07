@@ -15,7 +15,7 @@ class Gradients {
     );
   }
 
-  static BoxDecoration get botWidgetBorderGradient {
+  static BoxDecoration containerBorderGradient(double? borderRadius) {
     return BoxDecoration(
       gradient: LinearGradient(
         begin: Alignment.topLeft,
@@ -38,7 +38,7 @@ class Gradients {
           primary.withOpacity(0.8),
         ],
       ),
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(borderRadius ?? 12),
     );
   }
 }

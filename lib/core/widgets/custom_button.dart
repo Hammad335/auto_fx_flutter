@@ -4,14 +4,18 @@ import '../styles/styles.dart';
 import '../theme/colors.dart';
 
 class CustomButton extends StatelessWidget {
-  final CredentialsController controller;
+  final double width;
+  final double height;
   final String label;
+  final double elevation;
   final VoidCallback onPressed;
 
   const CustomButton({
     super.key,
-    required this.controller,
+    required this.width,
+    required this.height,
     required this.label,
+    required this.elevation,
     required this.onPressed,
   });
 
@@ -23,17 +27,21 @@ class CustomButton extends StatelessWidget {
         alignment: Alignment.bottomRight,
         children: [
           ButtonShadow.background(
-            controller.size.width * 0.75,
-            controller.size.height * 0.052,
+            // size.width * 0.75,
+            // size.height * 0.052,
+            width,
+            height,
             5,
           ),
           Material(
-            elevation: 15,
+            elevation: elevation,
             color: Colors.transparent,
             shadowColor: Colors.transparent,
             child: Container(
-              width: controller.size.width * 0.75,
-              height: controller.size.height * 0.052,
+              // width: size.width * 0.75,
+              // height: size.height * 0.052,
+              width: width,
+              height: height,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: primary,
