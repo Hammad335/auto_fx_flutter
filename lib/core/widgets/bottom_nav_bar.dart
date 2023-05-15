@@ -26,7 +26,7 @@ class BottomNavBar extends StatelessWidget {
         children: [
           CustomPaintDivider(
             width: controller.getSize.width * 0.75,
-            dividerColor: secondary,
+            dividerColor: dividerColorGreen,
           ),
           const SizedBox(height: 15),
           Row(
@@ -57,7 +57,7 @@ class BottomNavBar extends StatelessWidget {
           const SizedBox(height: 15),
           CustomPaintDivider(
             width: controller.getSize.width * 0.75,
-            dividerColor: primary,
+            dividerColor: dividerColorBlue,
           ),
         ],
       ),

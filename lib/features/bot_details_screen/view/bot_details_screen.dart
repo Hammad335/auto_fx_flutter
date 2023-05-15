@@ -16,19 +16,15 @@ class BotDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     _controller.initSize(context);
     Bot bot = _controller.getCurrentBot;
-    List<MapEntry<String, dynamic>> features = bot.features
-        .toJson()
-        .entries
-        .map((e) => MapEntry(e.key, e.value))
-        .toList();
+    List<MapEntry<String, dynamic>> features = _controller.getBotFeaturesList;
     return Scaffold(
       backgroundColor: backgroundColor,
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 14),
         child: CustomButton(
           label: 'Trade It',
-          width: _controller.size.width * 0.79,
-          height: _controller.size.height * 0.050,
+          width: _controller.getSize.width * 0.79,
+          height: _controller.getSize.height * 0.050,
           elevation: 0,
           onPressed: () {},
         ),
@@ -82,7 +78,7 @@ class BotDetailsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 65),
               ],
             ),
           ),

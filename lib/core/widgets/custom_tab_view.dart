@@ -93,16 +93,16 @@ class CustomTabView extends StatelessWidget {
               decoration: BoxDecoration(
                 color: credentialsController != null
                     ? credentialsController.getSelectedTab == authMode
-                        ? primary
+                        ? primaryColor
                         : Colors.transparent
                     : homeController!.getSelectedTab == botTab
-                        ? primary
+                        ? primaryColor
                         : Colors.transparent,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text(
                 label,
-                style: const TextStyle(color: white),
+                style: const TextStyle(color: secondaryColor),
               ),
             ),
           ],

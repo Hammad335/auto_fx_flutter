@@ -9,8 +9,8 @@ class PageHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset(
       'assets/images/logos/logo.png',
-      width: size.width * 0.60,
-      height: size.width * 0.18,
+      width: size.width * 0.50,
+      height: size.width * 0.12,
     );
   }
 }

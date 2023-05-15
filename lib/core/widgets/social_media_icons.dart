@@ -38,7 +38,7 @@ class SocialMediaIcons extends StatelessWidget {
         }
       },
       child: CircleAvatar(
-        backgroundColor: white,
+        backgroundColor: secondaryColor,
         radius: 15,
         child: Image.asset(imagePath),
       ),

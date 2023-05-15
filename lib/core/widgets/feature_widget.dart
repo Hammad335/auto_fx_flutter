@@ -57,7 +57,7 @@ class FeatureWidget extends StatelessWidget {
                       child: feature.value
                           ? const Icon(
                               Icons.check,
-                              color: secondary,
+                              color: green,
                               size: 13,
                             )
                           : null,
@@ -69,7 +69,7 @@ class FeatureWidget extends StatelessWidget {
           const SizedBox(height: 12),
           CustomPaintDivider(
             width: controller.getSize.width,
-            dividerColor: dividerColor,
+            dividerColor: dividerColorLight,
           ),
         ],
       ),

@@ -23,7 +23,7 @@ class CredentialsScreen extends StatelessWidget {
               EdgeInsets.symmetric(horizontal: _controller.size.width * 0.11),
           child: Column(
             children: [
-              SizedBox(height: _controller.size.height * 0.09),
+              SizedBox(height: _controller.size.height * 0.06),
               Image.asset(
                 'assets/images/logos/logo.png',
                 width: 170,
@@ -49,7 +49,7 @@ class CredentialsScreen extends StatelessWidget {
                         width: _controller.size.width,
                         child: const Text(
                           'Forgot Password?',
-                          style: TextStyle(color: white),
+                          style: TextStyle(color: secondaryColor),
                           textAlign: TextAlign.end,
                         ),
                       ),
@@ -71,7 +71,7 @@ class CredentialsScreen extends StatelessWidget {
                         child: const Text(
                           'OR',
                           style: TextStyle(
-                            color: greyLight,
+                            color: secondaryColor,
                             fontSize: 16,
                           ),
                         ),

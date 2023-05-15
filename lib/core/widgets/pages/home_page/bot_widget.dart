@@ -45,7 +45,7 @@ class BotWidget extends StatelessWidget {
                 const SizedBox(height: 15),
                 CustomPaintDivider(
                   width: controller.getSize.width * 0.75,
-                  dividerColor: dividerColor,
+                  dividerColor: dividerColorLight,
                 ),
                 const SizedBox(height: 15),
                 Row(

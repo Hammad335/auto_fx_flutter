@@ -7,37 +7,37 @@ class TextStyles {
     color: errorColor,
   );
   static const TextStyle hintTextStyle = TextStyle(
-    color: greyLight,
+    color: secondaryColor,
   );
   static const TextStyle botWidgetTextStyle = TextStyle(
-    color: white,
+    color: secondaryColor,
   );
   static const TextStyle percentageStyle = TextStyle(
-    color: secondary,
+    color: green,
   );
 
   static const TextStyle lessonCategoryTextStyle = TextStyle(
-    color: Colors.white,
+    color: secondaryColor,
     fontSize: 17,
   );
   static const TextStyle lessonPageHeadingStyle = TextStyle(
-    color: Colors.white,
+    color: secondaryColor,
     fontSize: 19,
     fontWeight: FontWeight.bold,
     letterSpacing: 1,
   );
   static const TextStyle botScreenHeadingStyle = TextStyle(
-    color: primary,
+    color: primaryColor,
     fontSize: 19,
     fontWeight: FontWeight.bold,
   );
   static const TextStyle botDescStyle = TextStyle(
-    color: white,
+    color: secondaryColor,
     fontSize: 15,
     height: 1.5,
   );
   static const TextStyle featureKeyStyle = TextStyle(
-    color: white,
+    color: secondaryColor,
     fontSize: 17,
     fontWeight: FontWeight.w500,
   );

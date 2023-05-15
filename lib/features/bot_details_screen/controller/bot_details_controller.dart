@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BotDetailsController extends GetxController {
-  late Size size;
+  late Size _size;
 
   late final HomeController _homeController;
-  late Bot bot;
+  late Bot _bot;
 
   BotDetailsController() {
     _homeController = Get.find<HomeController>();
@@ -16,16 +16,28 @@ class BotDetailsController extends GetxController {
   }
 
   void _initBot() {
-    bot = _homeController.getOfficialBots[_homeController.tappedBotIndex];
+    _bot = _homeController.getOfficialBots[_homeController.tappedBotIndex];
   }
 
-  initSize(BuildContext context) => size = MediaQuery.of(context).size;
+  get getCurrentBot => _bot;
+
+  initSize(BuildContext context) =>
+      _size = MediaQuery
+          .of(context)
+          .size;
+
+  Size get getSize => _size;
+
+  List<MapEntry<String, dynamic>> get getBotFeaturesList =>
+      _bot.features
+          .toJson()
+          .entries
+          .map((e) => MapEntry(e.key, e.value))
+          .toList();
 
   String getFormattedKey(String key) {
     return featureKeys[key] ?? 'None';
   }
 
-  Size get getSize => size;
 
-  get getCurrentBot => bot;
 }

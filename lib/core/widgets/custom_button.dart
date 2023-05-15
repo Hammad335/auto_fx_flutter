@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../features/credentials_screen/controller/credentials_controller.dart';
 import '../styles/styles.dart';
 import '../theme/colors.dart';
 
@@ -44,13 +43,13 @@ class CustomButton extends StatelessWidget {
               height: height,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: primary,
+                color: primaryColor,
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Text(
                 label,
                 style: const TextStyle(
-                  color: greyLight,
+                  color: secondaryColor,
                   fontSize: 18,
                   fontWeight: FontWeight.w400,
                 ),

@@ -38,7 +38,7 @@ class NeumorphicTextField extends StatelessWidget {
           TextFormField(
             controller: textEditingController,
             style: const TextStyle(
-              color: white,
+              color: secondaryColor,
             ),
             decoration: InputDecoration(
               hintText: hint,
@@ -47,7 +47,7 @@ class NeumorphicTextField extends StatelessWidget {
                 AssetImage(
                   iconPath,
                 ),
-                color: white,
+                color: secondaryColor,
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
