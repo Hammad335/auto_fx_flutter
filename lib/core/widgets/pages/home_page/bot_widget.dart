@@ -22,7 +22,7 @@ class BotWidget extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 30, left: 30, right: 30),
         padding: const EdgeInsets.all(0),
         style: CustomNeumorphic.style(
-          fillColor: fillColor,
+          fillColor: containerFillColor,
           intensity: 0.9,
           depth: 8,
           borderRadius: 12,
@@ -32,7 +32,7 @@ class BotWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             height: 190,
             decoration: BoxDecoration(
-              color: fillColor,
+              color: containerFillColor,
               borderRadius: BorderRadius.circular(12),
             ),
             child: Column(

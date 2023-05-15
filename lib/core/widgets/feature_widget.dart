@@ -40,7 +40,7 @@ class FeatureWidget extends StatelessWidget {
                 if (feature.value.runtimeType == bool)
                   Neumorphic(
                     style: CustomNeumorphic.style(
-                      fillColor: fillColor,
+                      fillColor: containerFillColor,
                       intensity: 0.7,
                       depth: -2,
                       borderRadius: 4,

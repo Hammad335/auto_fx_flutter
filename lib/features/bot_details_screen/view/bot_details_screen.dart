@@ -18,7 +18,7 @@ class BotDetailsScreen extends StatelessWidget {
     Bot bot = _controller.getCurrentBot;
     List<MapEntry<String, dynamic>> features = _controller.getBotFeaturesList;
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: secondBackgroundColor,
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 14),
         child: CustomButton(
@@ -31,55 +31,57 @@ class BotDetailsScreen extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: SafeArea(
-        child: PageContainer(
-          paddingHorizontal: 25,
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: _controller.getSize.height * 0.04),
-                Text(
-                  bot.name,
-                  style: TextStyles.botScreenHeadingStyle,
-                ),
-                const SizedBox(height: 15),
-                Text(
-                  bot.description,
-                  style: TextStyles.botDescStyle,
-                ),
-                const SizedBox(height: 25),
-                const Text(
-                  'Features',
-                  style: TextStyles.botScreenHeadingStyle,
-                ),
-                const SizedBox(height: 20),
-                ...List.generate(features.length, (index) {
-                  return FeatureWidget(
-                    controller: _controller,
-                    feature: features[index],
-                  );
-                }),
-                const Text(
-                  'Charts',
-                  style: TextStyles.botScreenHeadingStyle,
-                ),
-                const SizedBox(height: 25),
-                Center(
-                  child: BorderGradientContainer(
-                    borderRadius: 8,
-                    child: Container(
-                      height: 200,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: fillColor,
-                        borderRadius: BorderRadius.circular(8),
+        child: ScreenBackgroundContainer(
+          child: PageContainer(
+            paddingHorizontal: 25,
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: _controller.getSize.height * 0.04),
+                  Text(
+                    bot.name,
+                    style: TextStyles.botScreenHeadingStyle,
+                  ),
+                  const SizedBox(height: 15),
+                  Text(
+                    bot.description,
+                    style: TextStyles.botDescStyle,
+                  ),
+                  const SizedBox(height: 25),
+                  const Text(
+                    'Features',
+                    style: TextStyles.botScreenHeadingStyle,
+                  ),
+                  const SizedBox(height: 20),
+                  ...List.generate(features.length, (index) {
+                    return FeatureWidget(
+                      controller: _controller,
+                      feature: features[index],
+                    );
+                  }),
+                  const Text(
+                    'Charts',
+                    style: TextStyles.botScreenHeadingStyle,
+                  ),
+                  const SizedBox(height: 25),
+                  Center(
+                    child: BorderGradientContainer(
+                      borderRadius: 8,
+                      child: Container(
+                        height: 200,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: containerFillColor,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 65),
-              ],
+                  const SizedBox(height: 65),
+                ],
+              ),
             ),
           ),
         ),

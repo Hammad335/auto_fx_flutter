@@ -18,7 +18,8 @@ class BottomNavBar extends StatelessWidget {
       width: double.infinity,
       height: 90,
       alignment: Alignment.bottomCenter,
-      color: backgroundColor,
+      // color: secondBackgroundColor,
+      decoration: Gradients.navBarBackgroundGradient,
       padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,

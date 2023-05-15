@@ -3,6 +3,32 @@ import 'package:flutter/material.dart';
 import '../theme/colors.dart';
 
 class Gradients {
+  static BoxDecoration get navBarBackgroundGradient {
+    return const BoxDecoration(
+      gradient: LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [
+          navBarBackgroundColorFirst,
+          navBarBackgroundColorSecond,
+        ],
+      ),
+    );
+  }
+
+  static BoxDecoration get screenBackgroundGradient {
+    return BoxDecoration(
+      gradient: LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [
+          firstBackgroundColor,
+          secondBackgroundColor,
+        ],
+      ),
+    );
+  }
+
   static BoxDecoration get selectedCategoryBorderGradient {
     return BoxDecoration(
       gradient: const LinearGradient(

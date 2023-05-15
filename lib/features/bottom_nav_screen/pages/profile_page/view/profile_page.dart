@@ -9,7 +9,6 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: backgroundColor,
       width: double.infinity,
       height: double.infinity,
       child: Center(
