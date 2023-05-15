@@ -41,4 +41,11 @@ class TextStyles {
     fontSize: 17,
     fontWeight: FontWeight.w500,
   );
+
+  static const TextStyle buttonLabelTextStyle = TextStyle(
+    color: secondaryColor,
+    fontSize: 18,
+    letterSpacing: 1,
+    fontWeight: FontWeight.w400,
+  );
 }

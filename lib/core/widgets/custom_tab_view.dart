@@ -70,35 +70,45 @@ class CustomTabView extends StatelessWidget {
       },
       child: Obx(
         () => Stack(
-          alignment: Alignment.bottomRight,
+          alignment: Alignment.topLeft,
           children: [
             if (null != credentialsController)
               if (credentialsController.getSelectedTab == authMode!)
                 ButtonShadow.background(
-                  width,
-                  height,
-                  10,
+                  width - 3,
+                  height - 2,
+                  5,
                 ),
             if (null != homeController)
               if (homeController.getSelectedTab == botTab!)
                 ButtonShadow.background(
-                  width,
-                  height,
-                  10,
+                  width - 3,
+                  height - 2,
+                  5,
                 ),
             Container(
               width: width,
               height: height,
               alignment: Alignment.center,
+              margin: const EdgeInsets.only(top: 1),
               decoration: BoxDecoration(
                 color: credentialsController != null
                     ? credentialsController.getSelectedTab == authMode
-                        ? primaryColor
+                        ? buttonFillColor
                         : Colors.transparent
                     : homeController!.getSelectedTab == botTab
-                        ? primaryColor
+                        ? buttonFillColor
                         : Colors.transparent,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(5),
+                border: Border.all(
+                  color: credentialsController != null
+                      ? credentialsController.getSelectedTab == authMode
+                          ? customButtonBorderColor
+                          : Colors.transparent
+                      : homeController!.getSelectedTab == botTab
+                          ? customButtonBorderColor
+                          : Colors.transparent,
+                ),
               ),
               child: Text(
                 label,

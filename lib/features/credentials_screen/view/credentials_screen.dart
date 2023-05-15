@@ -67,18 +67,30 @@ class CredentialsScreen extends StatelessWidget {
                             onPressed: () => _controller.authenticate(),
                           );
                         }),
-                        Container(
-                          margin: const EdgeInsets.symmetric(vertical: 30),
-                          child: const Text(
-                            'OR',
-                            style: TextStyle(
-                              color: secondaryColor,
-                              fontSize: 16,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CustomPaintDivider(
+                              width: _controller.size.width / 3,
+                              dividerColor: dividerColorLight,
                             ),
-                          ),
+                            Container(
+                              margin: const EdgeInsets.symmetric(vertical: 30),
+                              child: const Text(
+                                'OR',
+                                style: TextStyle(
+                                  color: secondaryColor,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            CustomPaintDivider(
+                              width: _controller.size.width / 3,
+                              dividerColor: dividerColorLight,
+                            ),
+                          ],
                         ),
                         SocialMediaIcons(),
-                        // const SizedBox(height: 100),
                       ],
                     ),
                   ),

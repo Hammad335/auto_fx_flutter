@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../styles/styles.dart';
 import '../theme/colors.dart';
+import '../theme/text_styles.dart';
 
 class CustomButton extends StatelessWidget {
   final double width;
@@ -43,16 +44,15 @@ class CustomButton extends StatelessWidget {
               height: height,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: primaryColor,
+                color: buttonFillColor,
                 borderRadius: BorderRadius.circular(5),
+                border: Border.all(
+                  color: customButtonBorderColor,
+                ),
               ),
               child: Text(
                 label,
-                style: const TextStyle(
-                  color: secondaryColor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400,
-                ),
+                style: TextStyles.buttonLabelTextStyle,
               ),
             ),
           ),

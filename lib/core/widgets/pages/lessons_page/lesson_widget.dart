@@ -21,7 +21,7 @@ class LessonWidget extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 20),
       padding: const EdgeInsets.all(0),
       style: CustomNeumorphic.style(
-        fillColor: backgroundColor,
+        fillColor: lessonWidgetFillColor,
         intensity: 0.80,
         depth: -3,
         borderRadius: 6,
@@ -36,7 +36,7 @@ class LessonWidget extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
               decoration: BoxDecoration(
-                color: backgroundColor,
+                color: lessonWidgetFillColor,
                 borderRadius: BorderRadius.circular(6),
               ),
               child: Column(
