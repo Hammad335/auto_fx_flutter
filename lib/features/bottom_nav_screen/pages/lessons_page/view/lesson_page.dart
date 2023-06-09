@@ -3,7 +3,7 @@ import 'package:auto_fx_flutter/core/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../../../core/models/models.dart';
-import '../../../../pages/lessons_page/controller/lessons_controller.dart';
+import '../controller/lessons_controller.dart';
 
 class LessonsPage extends StatelessWidget {
   final LessonsController _controller = Get.find<LessonsController>();

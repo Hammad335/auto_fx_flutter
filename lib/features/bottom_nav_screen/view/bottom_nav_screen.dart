@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 
 class BottomNavScreen extends StatelessWidget {
   static const String name = '/bottom-nav-screen';
-  final _controller = Get.find<NavController>();
+  final NavController _controller = Get.find<NavController>();
 
   BottomNavScreen({Key? key}) : super(key: key);
 
