@@ -40,13 +40,16 @@ dependencies:
   get: ^4.6.5
 
   # Neumorphic widgets
-  flutter_neumorphic: ^3.0.3
+  flutter_neumorphic:
+    git:
+      url: https://github.com/den0206/Flutter-Neumorphic.git
+      ref: feature/remoce_accentcolor
 
   # Firebase user authentication
   firebase_auth: ^4.4.0
 
   # Firebase firestore cloud storage
-  cloud_firestore: ^4.5.0
+  cloud_firestore: ^4.8.0
 
   # Google sign-in with firebase
   google_sign_in: ^6.0.2
@@ -78,6 +81,8 @@ flutter:
   assets:
     - assets/images/
     - assets/images/bottom_nav_bar_images/
+    - assets/images/logos/
+    - assets/images/text_field_prefixes/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

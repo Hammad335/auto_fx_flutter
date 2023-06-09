@@ -30,7 +30,7 @@ const Color buttonFillColor = secondBackgroundColor;
 const Color navBarIconColorSelected = Color(0xff097AEE);
 const Color navBarIconColorUnSelected = Color(0xffCDE3FF);
 const Color navIconBackgroundColor = Color(0xff3F3F3F);
-
+  
 // dividers
 const Color dividerColorGreen = green;
 const Color dividerColorBlue = blue;

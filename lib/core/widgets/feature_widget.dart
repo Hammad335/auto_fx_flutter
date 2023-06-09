@@ -1,10 +1,9 @@
-import 'package:auto_fx_flutter/core/styles/custom_neumorphic.dart';
 import 'package:auto_fx_flutter/core/theme/colors.dart';
 import 'package:auto_fx_flutter/core/theme/text_styles.dart';
 import 'package:auto_fx_flutter/core/widgets/widgets.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import '../../features/bot_details_screen/controller/bot_details_controller.dart';
+import '../styles/styles.dart';
 
 class FeatureWidget extends StatelessWidget {
   final BotDetailsController controller;

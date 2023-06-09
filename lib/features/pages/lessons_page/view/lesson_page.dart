@@ -1,9 +1,9 @@
-import 'package:auto_fx_flutter/core/theme/text_styles.dart';
-import 'package:auto_fx_flutter/core/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/models/models.dart';
+import '../../../../core/theme/text_styles.dart';
+import '../../../../core/widgets/widgets.dart';
 import 'package:get/get.dart';
-import '../../../../../core/models/models.dart';
-import '../../../../pages/lessons_page/controller/lessons_controller.dart';
+import '../controller/lessons_controller.dart';
 
 class LessonsPage extends StatelessWidget {
   final LessonsController _controller = Get.find<LessonsController>();
@@ -16,7 +16,6 @@ class LessonsPage extends StatelessWidget {
       paddingHorizontal: 30,
       child: Column(
         children: [
-          SizedBox(height: _controller.getSize.height * 0.04),
           const SizedBox(
             height: 50,
             child: Text(

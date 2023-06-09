@@ -1,8 +1,7 @@
 import 'package:auto_fx_flutter/core/models/models.dart';
 import 'package:auto_fx_flutter/core/theme/colors.dart';
-import 'package:auto_fx_flutter/core/widgets/custom_paint_divider.dart';
-import 'package:auto_fx_flutter/features/bottom_nav_screen/pages/home_page/controller/home_controller.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import '../../../../features/bottom_nav_screen/pages/home_page/controller/home_controller.dart';
 import '../../../styles/styles.dart';
 import '../../../theme/text_styles.dart';
 import '../../widgets.dart';
@@ -11,7 +10,11 @@ class BotWidget extends StatelessWidget {
   final HomeController controller;
   final int index;
 
-  const BotWidget({super.key, required this.controller, required this.index});
+  const BotWidget({
+    super.key,
+    required this.controller,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {

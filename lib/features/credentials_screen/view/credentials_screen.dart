@@ -1,6 +1,5 @@
 import 'package:auto_fx_flutter/core/enums/enums.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
 import '../../../core/theme/colors.dart';
 import '../../../core/widgets/widgets.dart';
