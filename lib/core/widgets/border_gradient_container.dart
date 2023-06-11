@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../styles/gradients.dart';
 
 class BorderGradientContainer extends StatelessWidget {

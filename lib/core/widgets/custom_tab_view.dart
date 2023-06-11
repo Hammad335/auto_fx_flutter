@@ -1,14 +1,14 @@
 import 'package:auto_fx_flutter/core/enums/enums.dart';
-import 'package:auto_fx_flutter/features/bottom_nav_screen/pages/home_page/controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../features/bottom_nav_screen/pages/bots_page/controller/bots_page_controller.dart';
 import '../../features/credentials_screen/controller/credentials_controller.dart';
 import '../styles/styles.dart';
 import '../theme/colors.dart';
 
 class CustomTabView extends StatelessWidget {
   final CredentialsController? credentialsController;
-  final HomeController? homeController;
+  final BotsPageController? botsPageController;
   final String firstLabel;
   final String secondLabel;
   final double width;
@@ -17,7 +17,7 @@ class CustomTabView extends StatelessWidget {
   const CustomTabView({
     super.key,
     this.credentialsController,
-    this.homeController,
+    this.botsPageController,
     required this.firstLabel,
     required this.secondLabel,
     required this.width,
@@ -36,7 +36,7 @@ class CustomTabView extends StatelessWidget {
           authMode: AuthMode.Signin,
           botTab: BotTab.OfficialBots,
           credentialsController: credentialsController,
-          homeController: homeController,
+          botsPageController: botsPageController,
         ),
         _getTabView(
           label: secondLabel,
@@ -45,7 +45,7 @@ class CustomTabView extends StatelessWidget {
           authMode: AuthMode.Signup,
           botTab: BotTab.YourBots,
           credentialsController: credentialsController,
-          homeController: homeController,
+          botsPageController: botsPageController,
         ),
       ],
     );
@@ -58,14 +58,14 @@ class CustomTabView extends StatelessWidget {
     AuthMode? authMode,
     BotTab? botTab,
     CredentialsController? credentialsController,
-    HomeController? homeController,
+    BotsPageController? botsPageController,
   }) {
     return GestureDetector(
       onTap: () {
         if (null != credentialsController) {
           credentialsController.toggleTabView(authMode!);
-        } else if (null != homeController) {
-          homeController.toggleTabView(botTab!);
+        } else if (null != botsPageController) {
+          botsPageController.toggleTabView(botTab!);
         }
       },
       child: Obx(
@@ -79,8 +79,8 @@ class CustomTabView extends StatelessWidget {
                   height - 2,
                   5,
                 ),
-            if (null != homeController)
-              if (homeController.getSelectedTab == botTab!)
+            if (null != botsPageController)
+              if (botsPageController.getSelectedTab == botTab!)
                 ButtonShadow.background(
                   width - 3,
                   height - 2,
@@ -96,7 +96,7 @@ class CustomTabView extends StatelessWidget {
                     ? credentialsController.getSelectedTab == authMode
                         ? buttonFillColor
                         : Colors.transparent
-                    : homeController!.getSelectedTab == botTab
+                    : botsPageController!.getSelectedTab == botTab
                         ? buttonFillColor
                         : Colors.transparent,
                 borderRadius: BorderRadius.circular(5),
@@ -105,7 +105,7 @@ class CustomTabView extends StatelessWidget {
                       ? credentialsController.getSelectedTab == authMode
                           ? customButtonBorderColor
                           : Colors.transparent
-                      : homeController!.getSelectedTab == botTab
+                      : botsPageController!.getSelectedTab == botTab
                           ? customButtonBorderColor
                           : Colors.transparent,
                 ),

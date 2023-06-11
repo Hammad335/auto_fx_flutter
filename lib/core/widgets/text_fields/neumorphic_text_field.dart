@@ -1,4 +1,3 @@
-import 'package:auto_fx_flutter/core/theme/text_styles.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import '../../styles/styles.dart';
 import '../../theme/colors.dart';

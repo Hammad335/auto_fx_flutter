@@ -1,8 +1,8 @@
-import 'package:auto_fx_flutter/features/bottom_nav_screen/pages/lessons_page/controller/lessons_controller.dart';
+import 'package:auto_fx_flutter/features/bottom_nav_screen/pages/lessons_page/controller/lessons_page_controller.dart';
 import 'package:flutter/material.dart';
 
 class TopicsListView extends StatelessWidget {
-  final LessonsController controller;
+  final LessonsPageController controller;
   final int index;
 
   const TopicsListView(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../styles/styles.dart';
 import '../theme/colors.dart';
-import '../theme/text_styles.dart';
 
 class CustomButton extends StatelessWidget {
   final double width;

@@ -1,7 +1,7 @@
-import 'package:auto_fx_flutter/constants/constants.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/controller/nav_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../constants/const.dart';
 import '../enums/enums.dart';
 import '../styles/styles.dart';
 import '../theme/colors.dart';
@@ -41,7 +41,7 @@ class BottomNavBar extends StatelessWidget {
               NavBarIconButton(
                 controller: controller,
                 imagePath: navBarImages[1],
-                navIcon: NavBarIcon.Trade,
+                navIcon: NavBarIcon.Bots,
               ),
               NavBarIconButton(
                 controller: controller,

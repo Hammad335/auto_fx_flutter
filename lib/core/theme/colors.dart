@@ -25,12 +25,13 @@ const Color containerFillColor = Color(0xff363333);
 const Color textFieldFillColor = Color(0xff313131);
 const Color lessonWidgetFillColor = Color(0xff2B2B2B);
 const Color buttonFillColor = secondBackgroundColor;
+const Color botWidgetFillColor = Color(0xff051729);
 
 // navigation-icons
 const Color navBarIconColorSelected = Color(0xff097AEE);
 const Color navBarIconColorUnSelected = Color(0xffCDE3FF);
 const Color navIconBackgroundColor = Color(0xff3F3F3F);
-  
+
 // dividers
 const Color dividerColorGreen = green;
 const Color dividerColorBlue = blue;

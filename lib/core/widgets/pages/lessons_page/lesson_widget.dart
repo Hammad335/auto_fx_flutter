@@ -1,12 +1,12 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:get/get.dart';
-import '../../../../features/bottom_nav_screen/pages/lessons_page/controller/lessons_controller.dart';
+import '../../../../features/bottom_nav_screen/pages/lessons_page/controller/lessons_page_controller.dart';
 import '../../../styles/styles.dart';
 import '../../../theme/colors.dart';
-import '../../../theme/text_styles.dart';
+import '../../../styles/text_styles.dart';
 
 class LessonWidget extends StatelessWidget {
-  final LessonsController controller;
+  final LessonsPageController controller;
   final int index;
 
   const LessonWidget({

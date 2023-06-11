@@ -1,17 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'database_service.dart';
 
 class AuthService {
-  late final DatabaseService _databaseService;
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
-  AuthService() {
-    _databaseService = DatabaseService();
-  }
+  AuthService();
 
-  Future<void> signUpWithEmailAndPassword(
+  Future<User> signUpWithEmailAndPassword(
     String userName,
     String email,
     String password,
@@ -25,9 +21,7 @@ class AuthService {
 
       User user = userCredential.user!;
       user.updateDisplayName(userName);
-
-      // store userData to cloud-firestore with uid
-      await _databaseService.addToFirestore(user);
+      return user;
     } catch (e) {
       rethrow;
     }

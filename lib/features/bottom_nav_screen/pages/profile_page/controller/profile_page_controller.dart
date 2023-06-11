@@ -2,10 +2,10 @@ import 'package:auto_fx_flutter/features/bottom_nav_screen/controller/nav_contro
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ProfileController extends GetxController {
+class ProfilePageController extends GetxController {
   late final NavController _navController;
 
-  ProfileController() {
+  ProfilePageController() {
     _navController = Get.find<NavController>();
   }
 

@@ -1,6 +1,6 @@
 import 'package:auto_fx_flutter/core/models/models.dart';
 import 'package:auto_fx_flutter/core/theme/colors.dart';
-import 'package:auto_fx_flutter/core/theme/text_styles.dart';
+import 'package:auto_fx_flutter/core/styles/text_styles.dart';
 import 'package:auto_fx_flutter/features/bot_details_screen/controller/bot_details_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

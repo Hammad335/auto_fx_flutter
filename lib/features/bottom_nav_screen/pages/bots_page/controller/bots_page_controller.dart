@@ -6,25 +6,35 @@ import 'package:auto_fx_flutter/features/bottom_nav_screen/controller/nav_contro
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
+class BotsPageController extends GetxController {
   late final NavController _navController;
   late final BotsRepo _botsRepo;
   Rx<BotTab> selectedBotTab = BotTab.OfficialBots.obs;
   int tappedBotIndex = 0;
 
   List<Bot> _officialBots = <Bot>[];
+  List<Bot> _customizedBots = <Bot>[];
 
-  HomeController() {
+  BotsPageController() {
     _botsRepo = BotsRepo();
     _navController = Get.find<NavController>();
   }
 
-  List<Bot> get getOfficialBots => [..._officialBots];
+  List<Bot> get getBots {
+    if (getSelectedTab == BotTab.OfficialBots) {
+      return [..._officialBots];
+    } else {
+      return [..._customizedBots];
+    }
+  }
 
   Future<List<Bot>?> get() async {
     try {
-      _officialBots = await _botsRepo.getOfficialBots();
-      return getOfficialBots;
+      if (getSelectedTab == BotTab.OfficialBots) {
+        return _officialBots = await _botsRepo.getOfficialBots();
+      } else {
+        return _customizedBots = await _botsRepo.getCustomizedBots();
+      }
     } catch (exception) {
       return null;
     }

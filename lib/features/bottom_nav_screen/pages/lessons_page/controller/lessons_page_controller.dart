@@ -4,7 +4,7 @@ import 'package:auto_fx_flutter/features/bottom_nav_screen/controller/nav_contro
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LessonsController extends GetxController {
+class LessonsPageController extends GetxController {
   late LessonsRepo _lessonsRepo;
   late final NavController _navController;
 
@@ -14,7 +14,7 @@ class LessonsController extends GetxController {
   // and showing gradient onTapping category
   late RxList<bool> categoriesIndex;
 
-  LessonsController() {
+  LessonsPageController() {
     _navController = Get.find<NavController>();
     _lessonsRepo = LessonsRepo();
   }

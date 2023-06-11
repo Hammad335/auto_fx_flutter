@@ -4,7 +4,7 @@ enum SocialAccount { Facebook, Google }
 
 enum NavBarIcon {
   Home,
-  Trade,
+  Bots,
   Lessons,
   User,
 }
