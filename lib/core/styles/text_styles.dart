@@ -2,6 +2,25 @@ import 'package:auto_fx_flutter/core/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class TextStyles {
+  // headings
+  static const TextStyle lessonPageHeadingStyle = TextStyle(
+    color: secondaryColor,
+    fontSize: 19,
+    fontWeight: FontWeight.bold,
+    letterSpacing: 1,
+  );
+
+  static TextStyle homeHeadingTextStyle =
+      featureKeyStyle.copyWith(fontSize: 18);
+
+  //sub-heading
+  static const TextStyle homeSubHeadingTextStyle = TextStyle(
+    color: secondaryColor,
+    letterSpacing: 1.2,
+    fontSize: 11,
+  );
+
+  //
   static const TextStyle errorTextStyle = TextStyle(
     fontSize: 16,
     color: errorColor,
@@ -20,12 +39,7 @@ class TextStyles {
     color: secondaryColor,
     fontSize: 17,
   );
-  static const TextStyle lessonPageHeadingStyle = TextStyle(
-    color: secondaryColor,
-    fontSize: 19,
-    fontWeight: FontWeight.bold,
-    letterSpacing: 1,
-  );
+
   static const TextStyle botScreenHeadingStyle = TextStyle(
     color: primaryColor,
     fontSize: 19,

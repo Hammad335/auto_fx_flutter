@@ -1,12 +1,17 @@
+import 'package:auto_fx_flutter/services/auth_service/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-class AuthService {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
+class AuthServiceImpl implements AuthService {
+  late final FirebaseAuth _auth;
+  late final GoogleSignIn _googleSignIn;
 
-  AuthService();
+  AuthServiceImpl() {
+    _auth = FirebaseAuth.instance;
+    _googleSignIn = GoogleSignIn();
+  }
 
+  @override
   Future<User> signUpWithEmailAndPassword(
     String userName,
     String email,
@@ -27,6 +32,7 @@ class AuthService {
     }
   }
 
+  @override
   Future<UserCredential> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleSignInAccount =
@@ -43,6 +49,7 @@ class AuthService {
     }
   }
 
+  @override
   Future<UserCredential> signInWithEmailAndPassword(
       String email, String password) async {
     try {
@@ -56,6 +63,7 @@ class AuthService {
     }
   }
 
+  @override
   Future<void> logout() async {
     try {
       await _signOutFromGoogle();
@@ -66,10 +74,11 @@ class AuthService {
     }
   }
 
-  Future<void> _signOutFromGoogle() async =>
-      await _googleSignIn.isSignedIn() ? _googleSignIn.signOut() : null;
-
+  @override
   bool isLoggedIn() {
     return _auth.currentUser != null;
   }
+
+  Future<void> _signOutFromGoogle() async =>
+      await _googleSignIn.isSignedIn() ? _googleSignIn.signOut() : null;
 }

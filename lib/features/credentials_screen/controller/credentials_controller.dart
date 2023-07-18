@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/enums/enums.dart';
 import '../../../core/models/models.dart';
-import '../../../core/repository/auth_repo.dart';
+import '../../../core/repository/auth_repo/auth_repo.dart';
+import '../../../core/repository/auth_repo/auth_repo_impl.dart';
 
 class CredentialsController extends GetxController {
   late final AuthRepo _authRepo;
@@ -20,7 +21,7 @@ class CredentialsController extends GetxController {
   Rx<AuthMode> selectedAuthMode = AuthMode.Signin.obs;
 
   CredentialsController() {
-    _authRepo = AuthRepo();
+    _authRepo = Get.find<AuthRepoImpl>();
     userNameController = TextEditingController();
     emailController = TextEditingController();
     passwordController = TextEditingController();

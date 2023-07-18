@@ -1,5 +1,6 @@
 import 'package:auto_fx_flutter/core/models/models.dart';
 import 'package:auto_fx_flutter/core/repository/lessons_repo/lessons_repo.dart';
+import 'package:auto_fx_flutter/core/repository/lessons_repo/lessons_repo_impl.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/controller/nav_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,7 @@ class LessonsPageController extends GetxController {
 
   LessonsPageController() {
     _navController = Get.find<NavController>();
-    _lessonsRepo = LessonsRepo();
+    _lessonsRepo = Get.find<LessonsRepoImpl>();
   }
 
   List<LessonCategory> get getAllLessonCategories => [..._lessonCategories];

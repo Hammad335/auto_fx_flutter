@@ -15,6 +15,8 @@ const Color secondBackgroundColor = Color(0xff000F21);
 const Color navBarBackgroundColorFirst = Color(0xff0B1724);
 const Color navBarBackgroundColorSecond = Color(0xff031122);
 const Color snackBarBackgroundColor = Colors.white30;
+const Color splashBackgroundTopLeftColor = Color(0xff0D304E);
+const Color splashBackgroundBottomRightColor = Color(0xff000F20);
 
 // borders
 Color botCheckBoxBorderColor = Colors.white10.withAlpha(60);

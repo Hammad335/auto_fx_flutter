@@ -13,3 +13,4 @@ export 'pages/bots_page/bot_widget.dart';
 export 'feature_widget.dart';
 export 'border_gradient_container.dart';
 export 'screen_background_container.dart';
+export 'pages/home_page/home_page_header.dart';

@@ -67,4 +67,28 @@ class Gradients {
       borderRadius: BorderRadius.circular(borderRadius ?? 12),
     );
   }
+
+  static BoxDecoration portfolioWidgetFillGradient(double? borderRadius) {
+    return BoxDecoration(
+      gradient: LinearGradient(
+        begin: Alignment.topRight,
+        end: Alignment.bottomLeft,
+        colors: [],
+      ),
+      borderRadius: BorderRadius.circular(borderRadius ?? 12),
+    );
+  }
+
+  static BoxDecoration get splashBackgroundDecoration {
+    return const BoxDecoration(
+      gradient: LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [
+          splashBackgroundTopLeftColor,
+          splashBackgroundBottomRightColor,
+        ],
+      ),
+    );
+  }
 }

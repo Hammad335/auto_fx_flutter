@@ -1,6 +1,7 @@
 import 'package:auto_fx_flutter/core/enums/enums.dart';
 import 'package:auto_fx_flutter/core/models/models.dart';
 import 'package:auto_fx_flutter/core/repository/bots_repo/bots_repo.dart';
+import 'package:auto_fx_flutter/core/repository/bots_repo/bots_repo_impl.dart';
 import 'package:auto_fx_flutter/features/bot_details_screen/view/bot_details_screen.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/controller/nav_controller.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class BotsPageController extends GetxController {
   List<Bot> _customizedBots = <Bot>[];
 
   BotsPageController() {
-    _botsRepo = BotsRepo();
+    _botsRepo = Get.find<BotsRepoImpl>();
     _navController = Get.find<NavController>();
   }
 

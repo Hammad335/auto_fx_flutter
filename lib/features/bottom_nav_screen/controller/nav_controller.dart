@@ -1,3 +1,5 @@
+import 'package:auto_fx_flutter/core/repository/bots_repo/bots_repo_impl.dart';
+import 'package:auto_fx_flutter/core/repository/lessons_repo/lessons_repo_impl.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/pages/home_page/controller/home_page_controller.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/pages/lessons_page/controller/lessons_page_controller.dart';
 import 'package:auto_fx_flutter/features/bottom_nav_screen/pages/profile_page/controller/profile_page_controller.dart';
@@ -31,11 +33,13 @@ class NavController extends GetxController {
         break;
       case NavBarIcon.Bots:
         {
+          Get.lazyPut(() => BotsRepoImpl());
           Get.lazyPut(() => BotsPageController());
         }
         break;
       case NavBarIcon.Lessons:
         {
+          Get.lazyPut(() => LessonsRepoImpl());
           Get.lazyPut(() => LessonsPageController());
         }
         break;
